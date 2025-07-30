@@ -1,0 +1,23 @@
+
+  <!-- history section starts here -->
+   <section id="history-section" class="hidden">
+  <div class="bg-white p-4 shadow rounded">
+    <h2 class="text-xl font-semibold mb-2">Donation History</h2>
+    <ul id="history-list" class="list-disc pl-4 space-y-1 text-sm text-gray-700">
+      <!-- Donation entries will appear here -->
+    </ul>
+  </div>
+</section>
+
+  <!-- history section ends here -->
+
+
+
+
+
+   // Add to the donation history
+        const historyList = document.getElementById('history-list');
+        const donationTitle = card.querySelector('h3').innerText;
+        const li = document.createElement('li');
+        li.innerText = `${donationAmount.toFixed(2)} BDT donated to "${donationTitle}"`;
+        historyList.appendChild(li);

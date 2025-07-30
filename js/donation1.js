@@ -1,6 +1,6 @@
 const donationCards = document.querySelectorAll('.donation-card');
 
-donationCards.forEach((card, index) => {
+donationCards.forEach(card => {
     const donateButton = card.querySelector('#Donate-now');
     const donationInput = card.querySelector('#donation-input');
     const balanceElement = card.querySelector('#total-balance');
@@ -16,20 +16,20 @@ donationCards.forEach((card, index) => {
             return;
         }
 
-        // Update main balance
+        // changes the top balance
         const balanceDisplay = document.getElementById('main-balance');
         const currentBalanceText = balanceDisplay.innerText.replace('BDT', '').trim();
         const mainBalance = parseFloat(currentBalanceText);
         const newMainBalance = mainBalance - donationAmount;
         balanceDisplay.innerText = `${newMainBalance.toFixed(2)} BDT`;
 
-        // Update this card's total balance
+        // Update cards total balance
         const cardBalanceText = balanceElement.innerText.replace('BDT', '').trim();
         const cardBalance = parseFloat(cardBalanceText);
         const newCardBalance = cardBalance + donationAmount;
         balanceElement.innerText = `${newCardBalance.toFixed(2)} BDT`;
 
-        // Add to correct history list
+      // Add to correct history list
         const historyList = document.getElementById(`history-list-${index + 1}`);
         const donationTitle = card.querySelector('h3').innerText;
         const li = document.createElement('li');
